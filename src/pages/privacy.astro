@@ -36,7 +36,7 @@ const privacyHtml = markdownToHtml(privacyMd);
   <div class="min-h-screen">
     <!-- Header -->
     <header class="surface elevation-1 sticky top-0 z-10">
-      <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 py-6 sm:py-8 flex items-center justify-between">
+      <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between" style="padding-top: 2rem; padding-bottom: 2rem;">
         <a href="/" class="hover:opacity-80 transition-opacity">
           <Logo size="small" />
         </a>
@@ -53,15 +53,15 @@ const privacyHtml = markdownToHtml(privacyMd);
     </header>
 
     <!-- Privacy Policy Content -->
-    <main class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32">
+    <main class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12" style="padding-top: 5rem; padding-bottom: 8rem;">
       <!-- Surface container for better readability -->
-      <article class="surface elevation-1 rounded-3xl p-10 sm:p-12 lg:p-16 privacy-content">
+      <article class="surface elevation-1 rounded-3xl privacy-content" style="padding: 4rem;">
         <Fragment set:html={privacyHtml} />
       </article>
 
       <!-- Footer -->
-      <footer class="mt-20 pt-12 border-t border-[var(--color-outline-variant)] dark:border-[var(--color-outline-variant-dark)] text-center space-y-6">
-        <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed">
+      <footer class="border-t border-[var(--color-outline-variant)] dark:border-[var(--color-outline-variant-dark)] text-center" style="margin-top: 8rem; padding-top: 3rem;">
+        <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed" style="margin-bottom: 2rem;">
           Questions about this policy? Email us at{' '}
           <a
             href="mailto:privacy@subscripto.io"
