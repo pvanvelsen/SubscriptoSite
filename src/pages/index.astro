@@ -8,14 +8,14 @@ import Logo from '../components/Logo.astro';
     <div class="w-full max-w-5xl mx-auto">
 
       <!-- Hero Section -->
-      <div class="text-center" style="margin-bottom: 8rem;">
+      <div class="text-center hero-spacing">
         <!-- Logo -->
-        <div class="animate-fade-in" style="margin-bottom: 4rem;">
+        <div class="animate-fade-in logo-spacing">
           <Logo size="large" />
         </div>
 
         <!-- Coming Soon Badge -->
-        <div class="flex justify-center" style="margin-bottom: 3rem;">
+        <div class="flex justify-center badge-spacing">
           <div class="inline-flex items-center gap-3 px-8 py-4 rounded-full container-primary elevation-1">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -25,49 +25,49 @@ import Logo from '../components/Logo.astro';
         </div>
 
         <!-- Tagline -->
-        <h1 class="headline-large sm:display-small px-4 sm:px-8" style="margin-bottom: 2rem;">
+        <h1 class="headline-large sm:display-small px-4 sm:px-8 heading-spacing">
           Family subscription tracking<br class="hidden sm:block" /> made simple
         </h1>
 
         <!-- Description -->
-        <p class="title-medium text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed" style="max-width: 48rem; margin: 0 auto; padding: 0 2rem;">
+        <p class="title-medium text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed description-content" style="max-width: 48rem; margin: 0 auto; padding: 0 2rem;">
           Track, manage, and optimize your household subscriptions together. See what you're paying for, share costs fairly, and never forget another renewal.
         </p>
       </div>
 
       <!-- Features Preview -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 px-4 sm:px-0" style="margin-bottom: 8rem;">
-        <div class="surface elevation-2 rounded-3xl text-center hover:elevation-3 transition-all" style="padding: 3rem;">
-          <div style="width: 5rem; height: 5rem; margin: 0 auto 2rem;" class="rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 px-4 sm:px-0 features-spacing">
+        <div class="surface elevation-2 rounded-3xl text-center hover:elevation-3 transition-all card-padding">
+          <div class="feature-icon rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center">
             <svg class="w-8 h-8 text-[var(--color-primary)] dark:text-[var(--color-primary-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
-          <h3 class="title-large" style="margin-bottom: 1.5rem;">Family Sharing</h3>
+          <h3 class="title-large feature-title">Family Sharing</h3>
           <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed">
             Manage subscriptions together with your household members
           </p>
         </div>
 
-        <div class="surface elevation-2 rounded-3xl text-center hover:elevation-3 transition-all" style="padding: 3rem;">
-          <div style="width: 5rem; height: 5rem; margin: 0 auto 2rem;" class="rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center">
+        <div class="surface elevation-2 rounded-3xl text-center hover:elevation-3 transition-all card-padding">
+          <div class="feature-icon rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center">
             <svg class="w-8 h-8 text-[var(--color-primary)] dark:text-[var(--color-primary-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 class="title-large" style="margin-bottom: 1.5rem;">Fair Cost Splitting</h3>
+          <h3 class="title-large feature-title">Fair Cost Splitting</h3>
           <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed">
             Split subscription costs fairly across family members
           </p>
         </div>
 
-        <div class="surface elevation-2 rounded-3xl text-center hover:elevation-3 transition-all" style="padding: 3rem;">
-          <div style="width: 5rem; height: 5rem; margin: 0 auto 2rem;" class="rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center">
+        <div class="surface elevation-2 rounded-3xl text-center hover:elevation-3 transition-all card-padding">
+          <div class="feature-icon rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center">
             <svg class="w-8 h-8 text-[var(--color-primary)] dark:text-[var(--color-primary-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
             </svg>
           </div>
-          <h3 class="title-large" style="margin-bottom: 1.5rem;">Smart Reminders</h3>
+          <h3 class="title-large feature-title">Smart Reminders</h3>
           <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed">
             Never miss a renewal with timely notifications
           </p>
@@ -103,8 +103,8 @@ import Logo from '../components/Logo.astro';
       </div>
 
       <!-- Footer -->
-      <footer class="border-t border-[var(--color-outline-variant)] dark:border-[var(--color-outline-variant-dark)] text-center" style="margin-top: 8rem; padding-top: 3rem;">
-        <nav class="title-small text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] flex items-center justify-center gap-8" style="margin-bottom: 2rem;">
+      <footer class="border-t border-[var(--color-outline-variant)] dark:border-[var(--color-outline-variant-dark)] text-center footer-spacing">
+        <nav class="title-small text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] flex items-center justify-center gap-8 footer-nav">
           <a
             href="/privacy"
             class="hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary-dark)] transition-colors"
@@ -146,5 +146,123 @@ import Logo from '../components/Logo.astro';
   /* Smooth transitions */
   a, button {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Desktop spacing (default) */
+  .hero-spacing {
+    margin-bottom: 8rem;
+  }
+
+  .logo-spacing {
+    margin-bottom: 4rem;
+  }
+
+  .badge-spacing {
+    margin-bottom: 3rem;
+  }
+
+  .heading-spacing {
+    margin-bottom: 2rem;
+  }
+
+  .features-spacing {
+    margin-bottom: 8rem;
+  }
+
+  .card-padding {
+    padding: 3rem;
+  }
+
+  .feature-icon {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto 2rem;
+  }
+
+  .feature-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-spacing {
+    margin-top: 8rem;
+    padding-top: 3rem;
+  }
+
+  .footer-nav {
+    margin-bottom: 2rem;
+  }
+
+  /* Mobile spacing (640px and below) */
+  @media (max-width: 640px) {
+    .hero-spacing {
+      margin-bottom: 4rem;
+    }
+
+    .logo-spacing {
+      margin-bottom: 2.5rem;
+    }
+
+    .badge-spacing {
+      margin-bottom: 2rem;
+    }
+
+    .heading-spacing {
+      margin-bottom: 1.5rem;
+    }
+
+    .features-spacing {
+      margin-bottom: 4rem;
+    }
+
+    .card-padding {
+      padding: 2rem;
+    }
+
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-title {
+      margin-bottom: 1rem;
+    }
+
+    .footer-spacing {
+      margin-top: 4rem;
+      padding-top: 2rem;
+    }
+
+    .footer-nav {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  /* Very small mobile (400px and below) */
+  @media (max-width: 400px) {
+    .hero-spacing {
+      margin-bottom: 3rem;
+    }
+
+    .logo-spacing {
+      margin-bottom: 2rem;
+    }
+
+    .badge-spacing {
+      margin-bottom: 1.5rem;
+    }
+
+    .card-padding {
+      padding: 1.5rem;
+    }
+
+    .feature-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+
+    .footer-spacing {
+      margin-top: 3rem;
+    }
   }
 </style>
