@@ -35,29 +35,33 @@ const privacyHtml = markdownToHtml(privacyMd);
 >
   <div class="min-h-screen">
     <!-- Header -->
-    <header class="bg-[var(--color-surface)] dark:bg-[var(--color-surface-dark)] border-b border-gray-200 dark:border-gray-800 py-4 px-6">
-      <div class="max-w-4xl mx-auto flex items-center justify-between">
+    <header class="surface elevation-1 sticky top-0 z-10">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <a href="/" class="hover:opacity-80 transition-opacity">
           <Logo size="small" />
         </a>
         <a
           href="/"
-          class="text-sm text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline"
+          class="label-large text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:opacity-80 transition-opacity flex items-center gap-2"
         >
-          ← Back to Home
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back
         </a>
       </div>
     </header>
 
     <!-- Privacy Policy Content -->
-    <main class="max-w-3xl mx-auto px-6 py-12">
-      <article class="privacy-content">
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <!-- Surface container for better readability -->
+      <article class="surface elevation-1 rounded-3xl p-6 sm:p-8 lg:p-12 privacy-content">
         <Fragment set:html={privacyHtml} />
       </article>
 
       <!-- Footer -->
-      <footer class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-60">
-        <p>
+      <footer class="mt-12 pt-8 border-t border-[var(--color-outline-variant)] dark:border-[var(--color-outline-variant-dark)] text-center">
+        <p class="body-medium text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
           Questions about this policy? Email us at{' '}
           <a
             href="mailto:privacy@subscripto.io"
@@ -66,22 +70,25 @@ const privacyHtml = markdownToHtml(privacyMd);
             privacy@subscripto.io
           </a>
         </p>
-        <p class="mt-4">© 2024 Subscripto. All rights reserved.</p>
+        <p class="body-small text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] mt-4">
+          © 2024 Subscripto. All rights reserved.
+        </p>
       </footer>
     </main>
   </div>
 </BaseLayout>
 
 <style>
+  /* Privacy Policy Content Styling - Material 3 */
   .privacy-content {
-    line-height: 1.8;
-    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .privacy-content h1 {
     font-size: 2.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    line-height: 2.75rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
     text-align: center;
     color: var(--color-primary);
   }
@@ -94,27 +101,28 @@ const privacyHtml = markdownToHtml(privacyMd);
 
   .privacy-content h2 {
     font-size: 1.5rem;
-    font-weight: 600;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--color-primary-container);
-    color: var(--color-on-background);
-    scroll-margin-top: 2rem;
+    line-height: 2rem;
+    font-weight: 400;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-outline-variant);
+    color: var(--color-on-surface);
   }
 
   @media (prefers-color-scheme: dark) {
     .privacy-content h2 {
-      color: var(--color-on-background-dark);
-      border-bottom-color: var(--color-primary-container-dark);
+      color: var(--color-on-surface-dark);
+      border-bottom-color: var(--color-outline-variant-dark);
     }
   }
 
   .privacy-content h3 {
     font-size: 1.125rem;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     color: var(--color-primary);
   }
 
@@ -125,37 +133,38 @@ const privacyHtml = markdownToHtml(privacyMd);
   }
 
   .privacy-content p {
-    margin-bottom: 1.25rem;
-    color: var(--color-on-background);
-    opacity: 0.9;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-on-surface-variant);
   }
 
   @media (prefers-color-scheme: dark) {
     .privacy-content p {
-      color: var(--color-on-background-dark);
+      color: var(--color-on-surface-variant-dark);
     }
   }
 
   .privacy-content strong {
-    font-weight: 600;
-    color: var(--color-on-background);
-    opacity: 1;
+    font-weight: 500;
+    color: var(--color-on-surface);
   }
 
   @media (prefers-color-scheme: dark) {
     .privacy-content strong {
-      color: var(--color-on-background-dark);
+      color: var(--color-on-surface-dark);
     }
   }
 
   .privacy-content a {
     color: var(--color-primary);
     text-decoration: underline;
+    text-underline-offset: 2px;
     transition: opacity 0.2s;
   }
 
   .privacy-content a:hover {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -167,16 +176,16 @@ const privacyHtml = markdownToHtml(privacyMd);
   .privacy-content hr {
     margin: 2.5rem 0;
     border: none;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--color-outline-variant);
   }
 
   @media (prefers-color-scheme: dark) {
     .privacy-content hr {
-      border-top-color: rgba(255, 255, 255, 0.1);
+      border-top-color: var(--color-outline-variant-dark);
     }
   }
 
-  /* Add spacing between sections */
+  /* First element spacing */
   .privacy-content > *:first-child {
     margin-top: 0;
   }
@@ -188,8 +197,8 @@ const privacyHtml = markdownToHtml(privacyMd);
     }
 
     .privacy-content {
-      font-size: 11pt;
-      line-height: 1.6;
+      box-shadow: none !important;
+      padding: 0 !important;
     }
 
     .privacy-content h1 {
@@ -205,20 +214,32 @@ const privacyHtml = markdownToHtml(privacyMd);
       font-size: 12pt;
       page-break-after: avoid;
     }
+
+    .privacy-content p {
+      font-size: 11pt;
+    }
   }
 
   /* Mobile responsiveness */
   @media (max-width: 640px) {
     .privacy-content h1 {
-      font-size: 1.75rem;
+      font-size: 1.875rem;
+      line-height: 2.25rem;
     }
 
     .privacy-content h2 {
       font-size: 1.25rem;
+      line-height: 1.75rem;
     }
 
     .privacy-content h3 {
       font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .privacy-content p {
+      font-size: 0.9375rem;
+      line-height: 1.625rem;
     }
   }
 </style>

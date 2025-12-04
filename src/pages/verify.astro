@@ -17,19 +17,20 @@ const isError = !!error;
   title={isSuccess ? 'Email Verified' : 'Verification Failed'}
   description="Email verification for Subscripto account"
 >
-  <div class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-    <div class="max-w-md mx-auto text-center space-y-8">
+  <div class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+    <div class="w-full max-w-md mx-auto">
+
       <!-- Logo -->
-      <div>
+      <div class="text-center mb-8">
         <Logo size="medium" />
       </div>
 
       {isSuccess ? (
         <!-- Success State -->
-        <div class="space-y-6">
+        <div class="surface elevation-2 rounded-3xl p-8 space-y-6 text-center">
           <!-- Success Icon -->
           <div class="flex justify-center">
-            <div class="w-20 h-20 rounded-full bg-[var(--color-secondary)] dark:bg-[var(--color-secondary-dark)] flex items-center justify-center">
+            <div class="w-20 h-20 rounded-full bg-[var(--color-secondary)] dark:bg-[var(--color-secondary-dark)] flex items-center justify-center elevation-1">
               <svg
                 class="w-12 h-12 text-white"
                 fill="none"
@@ -47,35 +48,38 @@ const isError = !!error;
           </div>
 
           <!-- Success Message -->
-          <div class="space-y-2">
-            <h1 class="text-3xl font-bold text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)]">
+          <div class="space-y-3">
+            <h1 class="headline-small">
               Email Verified!
             </h1>
-            <p class="text-lg text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-80">
+            <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
               Your email has been successfully confirmed.
             </p>
           </div>
 
           <!-- Instructions -->
-          <div class="space-y-4">
-            <p class="text-base text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-70">
+          <div class="space-y-4 pt-4">
+            <p class="body-medium text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
               You can now close this page and return to the Subscripto app to continue setting up your account.
             </p>
 
             <!-- Open App Button -->
             <button
               id="openAppBtn"
-              class="w-full px-6 py-3 bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)] text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+              class="w-full px-6 py-4 bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)] text-white rounded-full font-medium hover:opacity-90 transition-all elevation-1 hover:elevation-2 flex items-center justify-center gap-2"
             >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
               Open Subscripto App
             </button>
 
             <!-- Fallback Link -->
-            <p class="text-sm text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-60">
+            <p class="body-small text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
               App not installed?{' '}
               <a
                 href="/"
-                class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline"
+                class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline font-medium"
               >
                 Download here
               </a>
@@ -84,10 +88,10 @@ const isError = !!error;
         </div>
       ) : (
         <!-- Error State -->
-        <div class="space-y-6">
+        <div class="surface elevation-2 rounded-3xl p-8 space-y-6 text-center">
           <!-- Error Icon -->
           <div class="flex justify-center">
-            <div class="w-20 h-20 rounded-full bg-[var(--color-error)] dark:bg-[var(--color-error-dark)] flex items-center justify-center">
+            <div class="w-20 h-20 rounded-full bg-[var(--color-error)] dark:bg-[var(--color-error-dark)] flex items-center justify-center elevation-1">
               <svg
                 class="w-12 h-12 text-white"
                 fill="none"
@@ -105,33 +109,36 @@ const isError = !!error;
           </div>
 
           <!-- Error Message -->
-          <div class="space-y-2">
-            <h1 class="text-3xl font-bold text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)]">
+          <div class="space-y-3">
+            <h1 class="headline-small">
               Verification Failed
             </h1>
-            <p class="text-lg text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-80">
+            <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
               {errorDescription || error || 'Something went wrong. Please try again.'}
             </p>
           </div>
 
           <!-- Error Actions -->
-          <div class="space-y-4">
-            <p class="text-base text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-70">
+          <div class="space-y-4 pt-4">
+            <p class="body-medium text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
               This verification link may have expired or already been used.
             </p>
 
             <a
               href="/"
-              class="inline-block w-full px-6 py-3 bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)] text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+              class="inline-flex items-center justify-center w-full px-6 py-4 bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)] text-white rounded-full font-medium hover:opacity-90 transition-all elevation-1 hover:elevation-2 gap-2"
             >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
               Return to Home
             </a>
 
-            <p class="text-sm text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-60">
+            <p class="body-small text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
               Need help?{' '}
               <a
                 href="mailto:hello@subscripto.io"
-                class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline"
+                class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline font-medium"
               >
                 Contact support
               </a>
@@ -141,8 +148,10 @@ const isError = !!error;
       )}
 
       <!-- Footer -->
-      <footer class="pt-8 text-sm text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-60">
-        <p>© 2024 Subscripto. All rights reserved.</p>
+      <footer class="pt-12 text-center">
+        <p class="body-small text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
+          © 2024 Subscripto. All rights reserved.
+        </p>
       </footer>
     </div>
   </div>

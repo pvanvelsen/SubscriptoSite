@@ -4,34 +4,80 @@ import Logo from '../components/Logo.astro';
 ---
 
 <BaseLayout title="Coming Soon" description="Family subscription tracking made simple. Track, manage, and optimize your household subscriptions together.">
-  <main class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-    <div class="max-w-2xl mx-auto text-center space-y-8">
-      <!-- Logo -->
-      <div class="animate-fade-in">
-        <Logo size="large" />
+  <main class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+    <div class="w-full max-w-2xl mx-auto">
+
+      <!-- Hero Section -->
+      <div class="text-center space-y-8 mb-16">
+        <!-- Logo -->
+        <div class="animate-fade-in">
+          <Logo size="large" />
+        </div>
+
+        <!-- Coming Soon Badge -->
+        <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full container-primary elevation-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="label-large">Coming Soon</span>
+        </div>
+
+        <!-- Tagline -->
+        <h1 class="headline-medium sm:headline-large mt-8">
+          Family subscription tracking made simple
+        </h1>
+
+        <!-- Description -->
+        <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] max-w-lg mx-auto px-4">
+          Track, manage, and optimize your household subscriptions together. See what you're paying for, share costs fairly, and never forget another renewal.
+        </p>
       </div>
 
-      <!-- Coming Soon Badge -->
-      <div class="inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] text-[var(--color-on-primary-container)] dark:text-[var(--color-on-primary-container-dark)] text-sm font-medium">
-        Coming Soon
+      <!-- Features Preview (Optional) -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16">
+        <div class="surface elevation-1 rounded-xl p-6 text-center">
+          <div class="w-12 h-12 rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-[var(--color-primary)] dark:text-[var(--color-primary-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="title-medium mb-2">Family Sharing</h3>
+          <p class="body-small text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
+            Manage subscriptions together with your household
+          </p>
+        </div>
+
+        <div class="surface elevation-1 rounded-xl p-6 text-center">
+          <div class="w-12 h-12 rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-[var(--color-primary)] dark:text-[var(--color-primary-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="title-medium mb-2">Fair Cost Splitting</h3>
+          <p class="body-small text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
+            Split subscription costs fairly across family members
+          </p>
+        </div>
+
+        <div class="surface elevation-1 rounded-xl p-6 text-center">
+          <div class="w-12 h-12 rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-[var(--color-primary)] dark:text-[var(--color-primary-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+          </div>
+          <h3 class="title-medium mb-2">Smart Reminders</h3>
+          <p class="body-small text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
+            Never miss a renewal with timely notifications
+          </p>
+        </div>
       </div>
-
-      <!-- Tagline -->
-      <p class="text-xl md:text-2xl text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-90">
-        Family subscription tracking made simple
-      </p>
-
-      <!-- Description -->
-      <p class="text-base md:text-lg text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-70 max-w-xl mx-auto">
-        Track, manage, and optimize your household subscriptions together. See what you're paying for, share costs fairly, and never forget another renewal.
-      </p>
 
       <!-- App Store Buttons (Hidden) -->
-      <div class="app-links hidden space-y-4 md:space-y-0 md:space-x-4">
+      <div class="app-links hidden flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
         <a
           href="#"
           aria-label="Download on the App Store"
-          class="inline-block transition-transform hover:scale-105"
+          class="inline-block transition-transform hover:scale-105 active:scale-95"
         >
           <img
             src="/app-store-badge.svg"
@@ -43,7 +89,7 @@ import Logo from '../components/Logo.astro';
         <a
           href="#"
           aria-label="Get it on Google Play"
-          class="inline-block transition-transform hover:scale-105"
+          class="inline-block transition-transform hover:scale-105 active:scale-95"
         >
           <img
             src="/google-play-badge.svg"
@@ -55,23 +101,23 @@ import Logo from '../components/Logo.astro';
       </div>
 
       <!-- Footer -->
-      <footer class="pt-12 text-sm text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-60">
-        <p>
+      <footer class="pt-12 mt-12 border-t border-[var(--color-outline-variant)] dark:border-[var(--color-outline-variant-dark)] text-center">
+        <nav class="body-medium text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] space-x-6">
           <a
             href="/privacy"
-            class="hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary-dark)] transition-colors underline"
+            class="hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary-dark)] transition-colors"
           >
             Privacy Policy
           </a>
-          {' • '}
+          <span>•</span>
           <a
             href="mailto:hello@subscripto.io"
-            class="hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary-dark)] transition-colors underline"
+            class="hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary-dark)] transition-colors"
           >
             Contact
           </a>
-        </p>
-        <p class="mt-2">
+        </nav>
+        <p class="body-small text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] mt-6">
           © 2024 Subscripto. All rights reserved.
         </p>
       </footer>
@@ -93,5 +139,10 @@ import Logo from '../components/Logo.astro';
 
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
+  }
+
+  /* Smooth transitions for interactive elements */
+  a, button {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 </style>
