@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
+
+// Get query parameters from Supabase redirect
+const url = Astro.url;
+const token = url.searchParams.get('token');
+const type = url.searchParams.get('type');
+const error = url.searchParams.get('error');
+const errorDescription = url.searchParams.get('error_description');
+
+const isSuccess = !error && token;
+const isError = !!error;
+---
+
+<BaseLayout
+  title={isSuccess ? 'Email Verified' : 'Verification Failed'}
+  description="Email verification for Subscripto account"
+>
+  <div class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+    <div class="max-w-md mx-auto text-center space-y-8">
+      <!-- Logo -->
+      <div>
+        <Logo size="medium" />
+      </div>
+
+      {isSuccess ? (
+        <!-- Success State -->
+        <div class="space-y-6">
+          <!-- Success Icon -->
+          <div class="flex justify-center">
+            <div class="w-20 h-20 rounded-full bg-[var(--color-secondary)] dark:bg-[var(--color-secondary-dark)] flex items-center justify-center">
+              <svg
+                class="w-12 h-12 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Success Message -->
+          <div class="space-y-2">
+            <h1 class="text-3xl font-bold text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)]">
+              Email Verified!
+            </h1>
+            <p class="text-lg text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-80">
+              Your email has been successfully confirmed.
+            </p>
+          </div>
+
+          <!-- Instructions -->
+          <div class="space-y-4">
+            <p class="text-base text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-70">
+              You can now close this page and return to the Subscripto app to continue setting up your account.
+            </p>
+
+            <!-- Open App Button -->
+            <button
+              id="openAppBtn"
+              class="w-full px-6 py-3 bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)] text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+            >
+              Open Subscripto App
+            </button>
+
+            <!-- Fallback Link -->
+            <p class="text-sm text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-60">
+              App not installed?{' '}
+              <a
+                href="/"
+                class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline"
+              >
+                Download here
+              </a>
+            </p>
+          </div>
+        </div>
+      ) : (
+        <!-- Error State -->
+        <div class="space-y-6">
+          <!-- Error Icon -->
+          <div class="flex justify-center">
+            <div class="w-20 h-20 rounded-full bg-[var(--color-error)] dark:bg-[var(--color-error-dark)] flex items-center justify-center">
+              <svg
+                class="w-12 h-12 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Error Message -->
+          <div class="space-y-2">
+            <h1 class="text-3xl font-bold text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)]">
+              Verification Failed
+            </h1>
+            <p class="text-lg text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-80">
+              {errorDescription || error || 'Something went wrong. Please try again.'}
+            </p>
+          </div>
+
+          <!-- Error Actions -->
+          <div class="space-y-4">
+            <p class="text-base text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-70">
+              This verification link may have expired or already been used.
+            </p>
+
+            <a
+              href="/"
+              class="inline-block w-full px-6 py-3 bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)] text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+            >
+              Return to Home
+            </a>
+
+            <p class="text-sm text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-60">
+              Need help?{' '}
+              <a
+                href="mailto:hello@subscripto.io"
+                class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline"
+              >
+                Contact support
+              </a>
+            </p>
+          </div>
+        </div>
+      )}
+
+      <!-- Footer -->
+      <footer class="pt-8 text-sm text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-60">
+        <p>© 2024 Subscripto. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ isSuccess, token }}>
+  if (isSuccess) {
+    const openAppBtn = document.getElementById('openAppBtn');
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    // Handle app opening
+    function openApp() {
+      const deepLink = `subscripto://verify?token=${encodeURIComponent(token || '')}`;
+
+      // Attempt to open the app
+      window.location.href = deepLink;
+
+      // Fallback: If app doesn't open after 2 seconds, redirect to home/app store
+      if (isMobile) {
+        setTimeout(() => {
+          if (document.visibilityState === 'visible') {
+            // App didn't open, redirect to home page
+            window.location.href = '/';
+          }
+        }, 2000);
+      }
+    }
+
+    // Add click handler to button
+    if (openAppBtn) {
+      openAppBtn.addEventListener('click', openApp);
+    }
+
+    // Auto-open app after 3 seconds on mobile
+    if (isMobile) {
+      setTimeout(() => {
+        openApp();
+      }, 3000);
+    }
+  }
+</script>

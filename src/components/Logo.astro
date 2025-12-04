@@ -1,0 +1,23 @@
+---
+interface Props {
+  size?: 'small' | 'medium' | 'large';
+}
+
+const { size = 'large' } = Astro.props;
+
+const sizeClasses = {
+  small: 'text-2xl',
+  medium: 'text-3xl',
+  large: 'text-4xl md:text-5xl lg:text-6xl',
+};
+---
+
+<h1 class={`font-bold ${sizeClasses[size]} leading-tight`}>
+  <span class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)]">Subscript</span><span class="text-[var(--color-secondary)] dark:text-[var(--color-secondary-dark)]">o</span>
+</h1>
+
+<style>
+  h1 {
+    letter-spacing: -0.02em;
+  }
+</style>

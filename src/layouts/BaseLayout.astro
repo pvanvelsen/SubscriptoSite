@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'Family subscription tracking made simple',
+  ogImage = '/logo.png'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, 'https://subscripto.io');
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title} | Subscripto</title>
+    <meta name="title" content={`${title} | Subscripto`} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | Subscripto`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={`${title} | Subscripto`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1976D2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#90CAF9" media="(prefers-color-scheme: dark)" />
+
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

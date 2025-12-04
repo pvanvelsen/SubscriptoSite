@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
+// Read and parse the privacy policy markdown
+const privacyMd = await readFile(join(process.cwd(), 'src/content/privacy.md'), 'utf-8');
+
+// Simple markdown to HTML conversion for headings and paragraphs
+function markdownToHtml(md: string): string {
+  return md
+    // H2 headers
+    .replace(/^## (.+)$/gm, '<h2 id="$1">$1</h2>')
+    // H3 headers
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    // Bold text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    // Links
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+    // Paragraphs
+    .replace(/^([^<\n#*-].+)$/gm, '<p>$1</p>')
+    // Line breaks
+    .replace(/\n\n/g, '\n')
+    // Horizontal rules
+    .replace(/^---$/gm, '<hr />');
+}
+
+const privacyHtml = markdownToHtml(privacyMd);
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Subscripto Privacy Policy - Learn how we collect, use, and protect your subscription tracking data."
+>
+  <div class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-[var(--color-surface)] dark:bg-[var(--color-surface-dark)] border-b border-gray-200 dark:border-gray-800 py-4 px-6">
+      <div class="max-w-4xl mx-auto flex items-center justify-between">
+        <a href="/" class="hover:opacity-80 transition-opacity">
+          <Logo size="small" />
+        </a>
+        <a
+          href="/"
+          class="text-sm text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline"
+        >
+          ← Back to Home
+        </a>
+      </div>
+    </header>
+
+    <!-- Privacy Policy Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+      <article class="prose prose-lg dark:prose-invert max-w-none privacy-content">
+        <Fragment set:html={privacyHtml} />
+      </article>
+
+      <!-- Footer -->
+      <footer class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-[var(--color-on-background)] dark:text-[var(--color-on-background-dark)] opacity-60">
+        <p>
+          Questions about this policy? Email us at{' '}
+          <a
+            href="mailto:privacy@subscripto.io"
+            class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline"
+          >
+            privacy@subscripto.io
+          </a>
+        </p>
+        <p class="mt-4">© 2024 Subscripto. All rights reserved.</p>
+      </footer>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .privacy-content {
+    line-height: 1.8;
+  }
+
+  .privacy-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .privacy-content h1 {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  .privacy-content h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color-on-background);
+    scroll-margin-top: 2rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .privacy-content h2 {
+      color: var(--color-on-background-dark);
+    }
+  }
+
+  .privacy-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-on-background);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .privacy-content h3 {
+      color: var(--color-on-background-dark);
+    }
+  }
+
+  .privacy-content p {
+    margin-bottom: 1rem;
+    color: var(--color-on-background);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .privacy-content p {
+      color: var(--color-on-background-dark);
+    }
+  }
+
+  .privacy-content strong {
+    font-weight: 600;
+    color: var(--color-on-background);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .privacy-content strong {
+      color: var(--color-on-background-dark);
+    }
+  }
+
+  .privacy-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .privacy-content a:hover {
+    opacity: 0.8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .privacy-content a {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  .privacy-content hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .privacy-content hr {
+      border-top-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    header {
+      display: none;
+    }
+
+    .privacy-content {
+      font-size: 12pt;
+      line-height: 1.6;
+    }
+  }
+</style>
