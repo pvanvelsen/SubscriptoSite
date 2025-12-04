@@ -16,40 +16,39 @@ const hasServerError = !!error;
   title="Email Verification"
   description="Email verification for Subscripto account"
 >
-  <div class="min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 lg:px-12 py-24 sm:py-32 lg:py-40">
-    <div class="w-full max-w-3xl mx-auto">
+  <div class="min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 py-20">
+    <div class="w-full max-w-2xl mx-auto text-center">
 
       <!-- Logo -->
-      <div class="text-center mb-16 sm:mb-20">
+      <div class="mb-24">
         <Logo size="large" />
       </div>
 
       <!-- Loading State (shown while checking hash fragment) -->
-      <div id="loading-state" class="surface elevation-2 rounded-3xl px-8 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-24 text-center" style={hasServerError ? 'display: none;' : ''}>
-        <div class="flex justify-center mb-10">
-          <div class="w-32 h-32 rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center elevation-1">
-            <svg class="w-16 h-16 text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] animate-spin" fill="none" viewBox="0 0 24 24">
+      <div id="loading-state" style={hasServerError ? 'display: none;' : ''}>
+        <!-- Loading Icon -->
+        <div class="flex justify-center mb-16">
+          <div class="w-48 h-48 rounded-full bg-[var(--color-primary-container)] dark:bg-[var(--color-primary-container-dark)] flex items-center justify-center">
+            <svg class="w-24 h-24 text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] animate-spin" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
           </div>
         </div>
 
-        <div class="space-y-6">
-          <h1 class="headline-large">Verifying...</h1>
-          <p class="title-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed max-w-md mx-auto">
-            Please wait while we confirm your email address.
-          </p>
-        </div>
+        <h1 class="display-small mb-8">Verifying...</h1>
+        <p class="title-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed">
+          Please wait while we confirm your email address.
+        </p>
       </div>
 
       <!-- Success State -->
-      <div id="success-state" class="surface elevation-2 rounded-3xl px-8 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-24 text-center" style="display: none;">
+      <div id="success-state" style="display: none;">
         <!-- Success Icon -->
-        <div class="flex justify-center mb-10">
-          <div class="w-32 h-32 rounded-full bg-[var(--color-secondary)] dark:bg-[var(--color-secondary-dark)] flex items-center justify-center elevation-1">
+        <div class="flex justify-center mb-16">
+          <div class="w-48 h-48 rounded-full bg-[var(--color-secondary)] dark:bg-[var(--color-secondary-dark)] flex items-center justify-center">
             <svg
-              class="w-20 h-20 text-white"
+              class="w-28 h-28 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -57,7 +56,7 @@ const hasServerError = !!error;
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                stroke-width="2.5"
+                stroke-width="2"
                 d="M5 13l4 4L19 7"
               />
             </svg>
@@ -65,38 +64,36 @@ const hasServerError = !!error;
         </div>
 
         <!-- Success Message -->
-        <div class="space-y-6 mb-12">
-          <h1 class="headline-large">
-            Email Verified!
-          </h1>
-          <p class="title-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed max-w-md mx-auto">
-            Your email has been successfully confirmed.
-          </p>
-        </div>
+        <h1 class="display-small mb-8">
+          Email Verified!
+        </h1>
+        <p class="title-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed mb-16">
+          Your email has been successfully confirmed.
+        </p>
 
         <!-- Instructions -->
-        <div class="space-y-8 max-w-lg mx-auto">
-          <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed">
+        <div class="max-w-xl mx-auto">
+          <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed mb-12 text-center">
             You can now close this page and return to the Subscripto app to continue setting up your account.
           </p>
 
           <!-- Open App Button -->
           <button
             id="openAppBtn"
-            class="w-full px-10 py-6 bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)] text-white rounded-full title-large font-medium hover:opacity-90 active:scale-[0.98] transition-all elevation-2 hover:elevation-3 flex items-center justify-center gap-4"
+            class="w-full px-12 py-5 bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)] text-white rounded-full title-large font-medium hover:opacity-90 active:scale-[0.98] transition-all elevation-2 hover:elevation-3 flex items-center justify-center gap-3 mb-8"
           >
-            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
             <span>Open Subscripto App</span>
           </button>
 
           <!-- Fallback Link -->
-          <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
+          <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] text-center">
             App not installed?{' '}
             <a
               href="/"
-              class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline font-medium transition-opacity hover:opacity-80"
+              class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] underline hover:opacity-80 font-medium transition-opacity"
             >
               Download here
             </a>
@@ -105,12 +102,12 @@ const hasServerError = !!error;
       </div>
 
       <!-- Error State -->
-      <div id="error-state" class="surface elevation-2 rounded-3xl px-8 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-24 text-center" style={hasServerError ? '' : 'display: none;'}>
+      <div id="error-state" style={hasServerError ? '' : 'display: none;'}>
         <!-- Error Icon -->
-        <div class="flex justify-center mb-10">
-          <div class="w-32 h-32 rounded-full bg-[var(--color-error)] dark:bg-[var(--color-error-dark)] flex items-center justify-center elevation-1">
+        <div class="flex justify-center mb-16">
+          <div class="w-48 h-48 rounded-full bg-[var(--color-error)] dark:bg-[var(--color-error-dark)] flex items-center justify-center">
             <svg
-              class="w-20 h-20 text-white"
+              class="w-28 h-28 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -126,36 +123,34 @@ const hasServerError = !!error;
         </div>
 
         <!-- Error Message -->
-        <div class="space-y-6 mb-12">
-          <h1 class="headline-large">
-            Verification Failed
-          </h1>
-          <p id="error-message" class="title-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed max-w-md mx-auto">
-            {errorDescription || error || 'Something went wrong. Please try again.'}
-          </p>
-        </div>
+        <h1 class="display-small mb-8">
+          Verification Failed
+        </h1>
+        <p id="error-message" class="title-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed mb-16">
+          {errorDescription || error || 'Something went wrong. Please try again.'}
+        </p>
 
         <!-- Error Actions -->
-        <div class="space-y-8 max-w-lg mx-auto">
-          <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed">
+        <div class="max-w-xl mx-auto">
+          <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed mb-12 text-center">
             This verification link may have expired or already been used.
           </p>
 
           <a
             href="/"
-            class="inline-flex items-center justify-center w-full px-10 py-6 bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)] text-white rounded-full title-large font-medium hover:opacity-90 active:scale-[0.98] transition-all elevation-2 hover:elevation-3 gap-4"
+            class="inline-flex items-center justify-center w-full px-12 py-5 bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)] text-white rounded-full title-large font-medium hover:opacity-90 active:scale-[0.98] transition-all elevation-2 hover:elevation-3 gap-3 mb-8"
           >
-            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
             </svg>
             <span>Return to Home</span>
           </a>
 
-          <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
+          <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] text-center">
             Need help?{' '}
             <a
               href="mailto:hello@subscripto.io"
-              class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline font-medium transition-opacity hover:opacity-80"
+              class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] underline hover:opacity-80 font-medium transition-opacity"
             >
               Contact support
             </a>
@@ -164,8 +159,8 @@ const hasServerError = !!error;
       </div>
 
       <!-- Footer -->
-      <footer class="pt-20 text-center">
-        <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
+      <footer class="mt-32 pt-12 border-t border-[var(--color-outline-variant)] dark:border-[var(--color-outline-variant-dark)]">
+        <p class="body-medium text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
           © 2024 Subscripto. All rights reserved.
         </p>
       </footer>
