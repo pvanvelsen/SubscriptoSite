@@ -1,0 +1,517 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { marked } from 'marked';
+
+// Configure marked options
+marked.setOptions({
+  gfm: true, // GitHub Flavored Markdown
+  breaks: false,
+});
+
+// Read and parse the terms of use markdown
+const termsMd = await readFile(join(process.cwd(), 'src/content/terms.md'), 'utf-8');
+const termsHtml = marked.parse(termsMd);
+---
+
+<BaseLayout
+  title="Terms of Use"
+  description="Subscriptin Terms of Use - Legal agreement governing your use of the subscription tracking application."
+>
+  <div class="min-h-screen" style="width: 100%;">
+    <!-- Header -->
+    <header class="surface elevation-1 sticky top-0 z-10" style="width: 100%;">
+      <div style="max-width: 80rem; margin: 0 auto; padding: 2rem 1.5rem;">
+        <a href="/" class="hover:opacity-80 transition-opacity" style="display: flex; justify-content: center;">
+          <Logo size="small" />
+        </a>
+      </div>
+    </header>
+
+    <!-- Terms of Use Content -->
+    <main style="width: 100%;">
+      <div style="max-width: 80rem; margin: 0 auto; padding: 5rem 1.5rem 8rem 1.5rem;">
+        <!-- Surface container for better readability -->
+        <article class="surface elevation-1 rounded-3xl terms-content" style="padding: 4rem;">
+          <Fragment set:html={termsHtml} />
+        </article>
+        <!-- Footer -->
+        <footer class="border-t border-[var(--color-outline-variant)] dark:border-[var(--color-outline-variant-dark)] text-center" style="margin-top: 8rem; padding-top: 3rem;">
+          <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed footer-text">
+            Questions about these terms? Email us at{' '}
+            <a
+              href="mailto:support@subscriptin.com"
+              class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline font-medium"
+            >
+              support@subscriptin.com
+            </a>
+          </p>
+          <p class="body-medium text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
+            © 2024 Subscriptin. All rights reserved.
+          </p>
+        </footer>
+      </div>
+    </main>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  /* Page padding */
+  .page-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .page-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .page-padding {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  /* Desktop spacing (default) */
+  .header-padding {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .main-padding {
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+  }
+
+  .article-padding {
+    padding: 4rem;
+  }
+
+  .footer-spacing {
+    margin-top: 8rem;
+    padding-top: 3rem;
+  }
+
+  .footer-text {
+    margin-bottom: 2rem;
+  }
+
+  /* Mobile spacing (640px and below) */
+  @media (max-width: 640px) {
+    .header-padding {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .main-padding {
+      padding-top: 3rem;
+      padding-bottom: 4rem;
+    }
+
+    .article-padding {
+      padding: 2rem;
+    }
+
+    .footer-spacing {
+      margin-top: 4rem;
+      padding-top: 2rem;
+    }
+
+    .footer-text {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  /* Very small mobile (400px and below) */
+  @media (max-width: 400px) {
+    .header-padding {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .main-padding {
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+    }
+
+    .article-padding {
+      padding: 1.5rem;
+    }
+
+    .footer-spacing {
+      margin-top: 3rem;
+    }
+  }
+
+  /* Terms of Use Content Styling - Material 3 */
+  .terms-content {
+    line-height: 1.6;
+  }
+
+  .terms-content h1 {
+    font-size: 2.25rem !important;
+    line-height: 2.75rem !important;
+    font-weight: 400 !important;
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
+    text-align: center !important;
+    color: var(--color-primary) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content h1 {
+      color: var(--color-primary-dark) !important;
+    }
+  }
+
+  .terms-content h2 {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+    font-weight: 400 !important;
+    margin-top: 4rem !important;
+    margin-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
+    border-bottom: 1px solid var(--color-outline-variant) !important;
+    color: var(--color-on-surface) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content h2 {
+      color: var(--color-on-surface-dark) !important;
+      border-bottom-color: var(--color-outline-variant-dark) !important;
+    }
+  }
+
+  .terms-content h3 {
+    font-size: 1.125rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 500 !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 1.5rem !important;
+    color: var(--color-primary) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content h3 {
+      color: var(--color-primary-dark) !important;
+    }
+  }
+
+  .terms-content h4 {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 500 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    color: var(--color-on-surface) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content h4 {
+      color: var(--color-on-surface-dark) !important;
+    }
+  }
+
+  .terms-content p {
+    font-size: 1rem !important;
+    line-height: 1.875rem !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 0 !important;
+    color: var(--color-on-surface-variant) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content p {
+      color: var(--color-on-surface-variant-dark) !important;
+    }
+  }
+
+  .terms-content strong {
+    font-weight: 500;
+    color: var(--color-on-surface);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content strong {
+      color: var(--color-on-surface-dark);
+    }
+  }
+
+  .terms-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .terms-content a:hover {
+    opacity: 0.8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content a {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  .terms-content hr {
+    margin: 2.5rem 0;
+    border: none;
+    border-top: 1px solid var(--color-outline-variant);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content hr {
+      border-top-color: var(--color-outline-variant-dark);
+    }
+  }
+
+  /* Lists */
+  .terms-content ul,
+  .terms-content ol {
+    margin-bottom: 1.5rem !important;
+    margin-top: 0.5rem !important;
+    padding-left: 1.5rem !important;
+    color: var(--color-on-surface-variant) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content ul,
+    .terms-content ol {
+      color: var(--color-on-surface-variant-dark) !important;
+    }
+  }
+
+  .terms-content ul {
+    list-style-type: disc !important;
+  }
+
+  .terms-content ol {
+    list-style-type: decimal !important;
+  }
+
+  .terms-content li {
+    margin-bottom: 0.5rem !important;
+    line-height: 1.75rem !important;
+    font-size: 1rem !important;
+  }
+
+  .terms-content li:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .terms-content li > ul,
+  .terms-content li > ol {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Nested lists */
+  .terms-content ul ul {
+    list-style-type: circle;
+  }
+
+  .terms-content ul ul ul {
+    list-style-type: square;
+  }
+
+  /* Tables */
+  .terms-content table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .terms-content table thead {
+    background-color: var(--color-surface-variant);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content table thead {
+      background-color: var(--color-surface-variant-dark);
+    }
+  }
+
+  .terms-content table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 500;
+    border-bottom: 2px solid var(--color-outline-variant);
+    color: var(--color-on-surface);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content table th {
+      color: var(--color-on-surface-dark);
+      border-bottom-color: var(--color-outline-variant-dark);
+    }
+  }
+
+  .terms-content table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-outline-variant);
+    color: var(--color-on-surface-variant);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content table td {
+      color: var(--color-on-surface-variant-dark);
+      border-bottom-color: var(--color-outline-variant-dark);
+    }
+  }
+
+  .terms-content table tbody tr:hover {
+    background-color: rgba(var(--color-primary-rgb), 0.05);
+  }
+
+  /* Code blocks */
+  .terms-content code {
+    background-color: var(--color-surface-variant);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.875rem;
+    color: var(--color-on-surface);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content code {
+      background-color: var(--color-surface-variant-dark);
+      color: var(--color-on-surface-dark);
+    }
+  }
+
+  .terms-content pre {
+    background-color: var(--color-surface-variant);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content pre {
+      background-color: var(--color-surface-variant-dark);
+    }
+  }
+
+  .terms-content pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  /* Blockquotes */
+  .terms-content blockquote {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--color-primary);
+    color: var(--color-on-surface-variant);
+    font-style: italic;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terms-content blockquote {
+      border-left-color: var(--color-primary-dark);
+      color: var(--color-on-surface-variant-dark);
+    }
+  }
+
+  /* First element spacing */
+  .terms-content > *:first-child {
+    margin-top: 0;
+  }
+
+  /* Print styles */
+  @media print {
+    header {
+      display: none;
+    }
+
+    .terms-content {
+      box-shadow: none !important;
+      padding: 0 !important;
+    }
+
+    .terms-content h1 {
+      font-size: 18pt;
+    }
+
+    .terms-content h2 {
+      font-size: 14pt;
+      page-break-after: avoid;
+    }
+
+    .terms-content h3 {
+      font-size: 12pt;
+      page-break-after: avoid;
+    }
+
+    .terms-content p {
+      font-size: 11pt;
+    }
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 640px) {
+    .terms-content h1 {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+
+    .terms-content h2 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .terms-content h3 {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .terms-content h4 {
+      font-size: 0.9375rem;
+      line-height: 1.375rem;
+    }
+
+    .terms-content p {
+      font-size: 0.9375rem;
+      line-height: 1.625rem;
+    }
+
+    .terms-content li {
+      font-size: 0.9375rem;
+      line-height: 1.625rem;
+    }
+
+    .terms-content table {
+      font-size: 0.875rem;
+    }
+
+    .terms-content table th,
+    .terms-content table td {
+      padding: 0.75rem 0.5rem;
+    }
+
+    .terms-content ul,
+    .terms-content ol {
+      padding-left: 1.25rem;
+    }
+
+    .terms-content pre {
+      padding: 1rem;
+      font-size: 0.8125rem;
+    }
+
+    .terms-content code {
+      font-size: 0.8125rem;
+    }
+  }
+</style>
