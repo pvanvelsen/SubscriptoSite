@@ -1,6 +1,6 @@
 # Terms of Use for Subscriptin
 
-**Last Updated:** December 7, 2025
+**Last Updated:** December 7, 2025  
 **Effective Date:** December 7, 2025
 
 ---
@@ -9,7 +9,7 @@
 
 Welcome to **Subscriptin** (the "App," "Service," "we," "our," or "us"). These Terms of Use ("Terms") constitute a legally binding agreement between you ("you," "your," or "user") and Subscriptin (individual developer) governing your access to and use of the Subscriptin mobile application.
 
-**By creating an account, downloading, installing, or using Subscriptin, you agree to be bound by these Terms and our [Privacy Policy](/privacy). If you do not agree to these Terms, you must not use the App.**
+**By creating an account, downloading, installing, or using Subscriptin, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you must not use the App.**
 
 ---
 
@@ -35,7 +35,7 @@ By creating an account, you represent and warrant that:
 
 ### 3.1 What Subscriptin Does
 
-Subscriptin is a **free**, personal subscription tracking and management application that allows you to:
+Subscriptin is a personal subscription tracking and management application available in both free and paid tiers that allows you to:
 
 - Track recurring subscriptions to third-party services (e.g., Netflix, Spotify, Adobe, etc.)
 - Monitor subscription costs, billing dates, and payment history
@@ -51,15 +51,15 @@ Subscriptin is a **free**, personal subscription tracking and management applica
 - Access your bank accounts or payment methods
 - Manage your subscriptions on your behalf
 
-### 3.2 Beta Status
+### 3.2 Service Updates
 
-Subscriptin is currently in **version 0.1.0** and is considered **pre-release/beta software**. The App may:
-- Contain bugs or errors
-- Experience unexpected downtime or data loss
-- Change significantly in future updates
-- Have incomplete or experimental features
+Subscriptin is continuously improved and updated. The App may:
+- Receive new features and enhancements
+- Experience occasional bugs or errors
+- Require periodic maintenance or downtime
+- Change in future updates to improve functionality
 
-**You acknowledge and accept the risks of using beta software.**
+**You acknowledge and accept that software may contain errors and that we work to address issues as they arise.**
 
 ---
 
@@ -112,7 +112,7 @@ You agree **NOT** to:
 #### Technical Prohibitions
 - Attempt to gain unauthorized access to any portion of the App, other accounts, or any systems or networks
 - Use any automated means (bots, scrapers, crawlers) to access or collect data from the Service
-- Reverse engineer, decompile, disassemble, or otherwise attempt to discover the source code of the App (except as permitted by open source licenses)
+- Reverse engineer, decompile, disassemble, or otherwise attempt to discover the source code of the App
 - Circumvent, disable, or interfere with security-related features or features that prevent unauthorized use
 - Introduce viruses, malware, or any other malicious code
 
@@ -179,14 +179,13 @@ You may not use Subscriptin to store:
 
 ### 7.1 Subscriptin Ownership
 
-The App, including its design, features, functionality, graphics, user interface, and underlying code (excluding open source components), is owned by Subscriptin and protected by copyright, trademark, and other intellectual property laws.
+The App, including its design, features, functionality, graphics, user interface, and underlying code, is owned by Subscriptin and protected by copyright, trademark, and other intellectual property laws.
 
 **App Name:** "Subscriptin"
-**GitHub Repository:** https://github.com/pvanvelsen/SubscriptinApp
 
-### 7.2 Open Source Components
+### 7.2 Third-Party Components
 
-Subscriptin incorporates open source software components licensed under various open source licenses, including:
+Subscriptin incorporates third-party software components licensed under various licenses, including:
 
 - **Kotlin Multiplatform, Compose Multiplatform** - Apache License 2.0
 - **SQLDelight** - Apache License 2.0
@@ -196,8 +195,6 @@ Subscriptin incorporates open source software components licensed under various 
 - **Material Color Utilities** - Apache License 2.0
 - **Coil3** - Apache License 2.0
 
-Full license texts and attributions are available in the App's open source repository.
-
 ### 7.3 Trademarks
 
 "Subscriptin" and any associated logos are trademarks or registered trademarks of Subscriptin. You may not use these trademarks without our prior written permission.
@@ -205,7 +202,7 @@ Full license texts and attributions are available in the App's open source repos
 ### 7.4 Restrictions
 
 You may **NOT**:
-- Copy, modify, or create derivative works of the App (except as permitted by open source licenses)
+- Copy, modify, or create derivative works of the App
 - Distribute, sell, lease, or sublicense the App
 - Remove, alter, or obscure any copyright, trademark, or proprietary notices
 - Use any Subscriptin branding in a way that suggests endorsement or affiliation without permission
@@ -266,6 +263,7 @@ We reserve the right to:
 - Add, modify, or remove features at any time without notice
 - Change the design, functionality, or user interface of the App
 - Discontinue the Service entirely with or without notice
+- Modify the features available in free vs. paid tiers
 
 **You acknowledge that future updates may change or remove features you currently use.**
 
@@ -276,9 +274,9 @@ We do not guarantee backwards compatibility with previous versions of the App. U
 - Change data formats or structures
 - Remove support for older devices or operating systems
 
-### 9.4 Beta Features
+### 9.4 Experimental Features
 
-Some features may be labeled as "beta," "experimental," or "preview." These features:
+Some features may be labeled as "experimental" or "preview." These features:
 - May not work as expected
 - May be changed or removed at any time
 - Are provided without warranty of any kind
@@ -287,24 +285,59 @@ Some features may be labeled as "beta," "experimental," or "preview." These feat
 
 ## 10. Fees and Payment
 
-### 10.1 Free Service
+### 10.1 Service Tiers
 
-Subscriptin is currently **100% free** to use. There are:
-- No subscription fees
-- No in-app purchases
-- No premium tiers or paywalls
-- No hidden costs
+Subscriptin is available in two tiers:
 
-### 10.2 Future Pricing
+**Free Tier:**
+- Basic subscription tracking features
+- Access to core functionality
+- No payment required
 
-We reserve the right to introduce paid features, premium tiers, or subscription fees in the future. If we do:
+**Paid Tier (Premium):**
+- Advanced features and enhanced functionality
+- Available via in-app purchase or subscription
+- Pricing displayed in the App and App Store/Play Store
+
+### 10.2 Payment Terms
+
+If you purchase a paid tier subscription:
+- Payment will be charged to your App Store (iOS) or Google Play (Android) account
+- Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period
+- Your account will be charged for renewal within 24 hours prior to the end of the current period
+- You can manage subscriptions and turn off auto-renewal in your device account settings
+- Any unused portion of a free trial period will be forfeited when you purchase a subscription
+
+### 10.3 Price Changes
+
+We reserve the right to modify subscription pricing at any time. If we increase prices:
 - We will provide at least **30 days' advance notice** via email or in-app notification
-- Existing users may be grandfathered into free access or offered discounted pricing (at our discretion)
-- You may delete your account before paid features take effect if you do not wish to pay
+- Existing subscribers will be notified before their next renewal
+- Price changes will apply to subsequent billing cycles after notice period
+- You may cancel your subscription before the price change takes effect
 
-### 10.3 No Refunds
+### 10.4 Refunds
 
-Since Subscriptin is currently free, no refunds are applicable. If we introduce paid features in the future, refund policies will be disclosed at that time.
+Refund requests are handled by Apple App Store or Google Play Store according to their respective refund policies:
+- **iOS:** Managed by Apple - contact Apple Support for refund requests
+- **Android:** Managed by Google Play - contact Google Play Support for refund requests
+
+We do not process refunds directly. Please refer to Apple's or Google's refund policies for eligibility criteria.
+
+### 10.5 Free Trial
+
+We may offer free trial periods for paid features. By activating a free trial:
+- You will be charged the subscription fee when the trial period ends unless you cancel before expiration
+- You must cancel at least 24 hours before the trial ends to avoid charges
+- Free trials are typically limited to one per user
+- We reserve the right to determine free trial eligibility
+
+### 10.6 Downgrading
+
+If you downgrade from a paid tier to the free tier:
+- Access to premium features will be lost immediately or at the end of your billing period (depending on platform)
+- Your data will be retained but premium-only features may become inaccessible
+- No pro-rated refunds will be provided for unused time
 
 ---
 
@@ -366,7 +399,7 @@ By enabling notifications, you consent to receive push notifications from Subscr
 
 ## 13. Privacy and Data Protection
 
-Your privacy is important to us. Please review our **[Privacy Policy](/privacy)** to understand how we collect, use, and protect your personal information.
+Your privacy is important to us. Please review our **Privacy Policy** to understand how we collect, use, and protect your personal information.
 
 **Key Privacy Points:**
 - We collect email, subscription data, and device information
@@ -447,7 +480,7 @@ This limitation of liability applies to claims arising from:
 
 ### 15.3 Maximum Liability Cap
 
-In jurisdictions that do not allow exclusion of liability, our total liability to you for all claims arising from your use of Subscriptin shall not exceed **$50 USD** or the amount you paid us in the past 12 months (currently $0, as the App is free).
+In jurisdictions that do not allow exclusion of liability, our total liability to you for all claims arising from your use of Subscriptin shall not exceed **$50 USD** or the amount you paid us in the past 12 months (whichever is greater).
 
 ### 15.4 Jurisdictional Exceptions
 
@@ -487,6 +520,7 @@ You may terminate your account at any time by:
 - Your data is retained for 30 days (see Privacy Policy)
 - After 30 days, all your data is permanently deleted from our servers
 - Local data on your device remains until you uninstall the App
+- Active paid subscriptions will continue until the end of the current billing period (no refunds)
 
 ### 17.2 Termination by Us
 
@@ -504,11 +538,14 @@ Upon termination by either party:
 - Your license to use the App immediately terminates
 - You must cease all use of the App
 - You will lose access to your account and User Content
-- Sections 6 (User Content license), 7 (Intellectual Property), 14 (Disclaimers), 15 (Limitation of Liability), 16 (Indemnification), and 20 (Dispute Resolution) survive termination
+- Active paid subscriptions may be cancelled without refund if termination is due to Terms violation
+- Sections 6 (User Content license), 7 (Intellectual Property), 14 (Disclaimers), 15 (Limitation of Liability), 16 (Indemnification), and 19 (Dispute Resolution) survive termination
 
-### 17.4 No Refunds Upon Termination
+### 17.4 Refunds Upon Termination
 
-If we introduce paid features in the future, no refunds will be provided for terminations initiated by you or for violations of these Terms.
+- **Voluntary Termination:** No refunds for unused subscription time
+- **Termination for Cause:** No refunds if we terminate your account for violating these Terms
+- **Platform Refunds:** Refund requests must be made through Apple App Store or Google Play Store
 
 ---
 
@@ -529,7 +566,7 @@ Your continued use of Subscriptin after changes take effect constitutes your acc
 
 ### 18.3 Reviewing Updates
 
-We encourage you to review these Terms periodically. The current version is always available within the App and in our GitHub repository.
+We encourage you to review these Terms periodically. The current version is always available within the App.
 
 ---
 
@@ -615,38 +652,12 @@ Provisions that by their nature should survive termination (including but not li
 If you have any questions, concerns, or feedback about these Terms, please contact us:
 
 **Email:** support@subscriptin.com
-**GitHub Issues:** https://github.com/pvanvelsen/SubscriptinApp/issues
 
 We will respond to all inquiries within 30 days.
 
 ---
 
-## 22. Open Source Transparency
-
-Subscriptin is an open source project. You can view the source code, report issues, and contribute at:
-
-**GitHub Repository:** https://github.com/pvanvelsen/SubscriptinApp
-
-While the source code is publicly available, your use of the App is still subject to these Terms.
-
----
-
-## 23. Beta Acknowledgment
-
-**By using Subscriptin version 0.1.0, you acknowledge that:**
-
-✓ The App is in beta/pre-release status
-✓ Features may change, break, or be removed without notice
-✓ Data loss, bugs, and errors are possible
-✓ No warranties or guarantees are provided
-✓ You use the App at your own risk
-✓ We appreciate your feedback to help improve the App
-
-**To report bugs or provide feedback, please contact support@subscriptin.com or open a GitHub issue.**
-
----
-
-## 24. Automatic Payment Processing Disclaimer
+## 22. Automatic Payment Processing Disclaimer
 
 Subscriptin includes a feature called "Automatic Payment Processing" which:
 
@@ -661,20 +672,21 @@ This feature is purely for **tracking purposes** to help you monitor your subscr
 
 ---
 
-## 25. Summary of Key Terms
+## 23. Summary of Key Terms
 
 For your convenience, here is a summary:
 
 | **Category** | **Key Points** |
 |---|---|
-| **Service Type** | Free subscription tracking app (beta version 0.1.0) |
+| **Service Type** | Subscription tracking app with free and paid tiers |
 | **Permitted Use** | Personal, non-commercial subscription tracking |
 | **Prohibited Use** | Commercial use, automated access, illegal content |
 | **Account Requirements** | Email, password, 13+ years old |
+| **Pricing** | Free tier available; paid tier via App Store/Play Store |
 | **Data Ownership** | You own your data; we have a limited license to store/sync it |
 | **Warranties** | None - provided "AS IS" without guarantees |
-| **Liability** | Limited to the maximum extent permitted by law (currently $0 paid = $0 liability cap) |
-| **Termination** | You or we can terminate at any time; 30-day data retention |
+| **Liability** | Limited to the maximum extent permitted by law ($50 USD or amount paid in 12 months) |
+| **Termination** | You or we can terminate at any time; 30-day data retention; no refunds for unused time |
 | **Third-Party Services** | Supabase, Firebase, Frankfurter API (we are not liable for their outages) |
 | **Dispute Resolution** | Informal resolution first, then governing law of developer's jurisdiction |
 | **Changes to Terms** | We may update with 30 days' notice for material changes |
@@ -682,18 +694,19 @@ For your convenience, here is a summary:
 
 ---
 
-## 26. Your Responsibilities Summary
+## 24. Your Responsibilities Summary
 
 By using Subscriptin, you agree to:
 
-✓ Provide accurate account information
-✓ Use the App only for personal, non-commercial purposes
-✓ Keep your account credentials secure
-✓ Enter accurate subscription data
-✓ Comply with all applicable laws
-✓ Not engage in prohibited uses (automation, abuse, illegal content)
-✓ Accept the risks of using beta software
-✓ Indemnify us against claims arising from your use
+✓ Provide accurate account information  
+✓ Use the App only for personal, non-commercial purposes  
+✓ Keep your account credentials secure  
+✓ Enter accurate subscription data  
+✓ Comply with all applicable laws  
+✓ Not engage in prohibited uses (automation, abuse, illegal content)  
+✓ Accept that software may contain errors  
+✓ Understand that paid subscriptions are non-refundable (except via App Store/Play Store policies)  
+✓ Indemnify us against claims arising from your use  
 ✓ Review and accept updates to these Terms
 
 ---
