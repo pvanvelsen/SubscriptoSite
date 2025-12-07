@@ -14,7 +14,7 @@ const hasServerError = !!error;
 
 <BaseLayout
   title="Email Verification"
-  description="Email verification for Subscripto account"
+  description="Email verification for Subscriptin account"
 >
   <div class="min-h-screen flex flex-col items-center justify-center page-padding py-20">
     <div class="w-full max-w-2xl mx-auto text-center content-padding">
@@ -74,7 +74,7 @@ const hasServerError = !!error;
         <!-- Instructions -->
         <div class="instructions-container" style="max-width: 36rem; margin: 0 auto; text-align: center;">
           <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed instruction-spacing">
-            You can now close this page and return to the Subscripto app to continue setting up your account.
+            You can now close this page and return to the Subscriptin app to continue setting up your account.
           </p>
 
           <!-- Open App Button -->
@@ -85,7 +85,7 @@ const hasServerError = !!error;
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
-            <span>Open Subscripto App</span>
+            <span>Open Subscriptin App</span>
           </button>
 
           <!-- Fallback Link -->
@@ -149,7 +149,7 @@ const hasServerError = !!error;
           <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
             Need help?{' '}
             <a
-              href="mailto:hello@subscripto.io"
+              href="mailto:hello@subscriptin.io"
               class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] underline hover:opacity-80 font-medium transition-opacity"
             >
               Contact support
@@ -161,7 +161,7 @@ const hasServerError = !!error;
       <!-- Footer -->
       <footer class="footer-spacing border-t border-[var(--color-outline-variant)] dark:border-[var(--color-outline-variant-dark)]">
         <p class="body-medium text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
-          © 2024 Subscripto. All rights reserved.
+          © 2024 Subscriptin. All rights reserved.
         </p>
       </footer>
     </div>
@@ -332,7 +332,7 @@ const hasServerError = !!error;
       if (errorState) errorState.style.display = 'none';
 
       // Update page title
-      document.title = 'Email Verified | Subscripto';
+      document.title = 'Email Verified | Subscriptin';
 
       // Setup app opening functionality
       setupAppOpening(params.access_token);
@@ -347,7 +347,7 @@ const hasServerError = !!error;
       }
 
       // Update page title
-      document.title = 'Verification Failed | Subscripto';
+      document.title = 'Verification Failed | Subscriptin';
     }
   }
 
@@ -357,7 +357,7 @@ const hasServerError = !!error;
 
     function openApp() {
       // Create deep link with the access token
-      const deepLink = `subscripto://auth/callback#access_token=${encodeURIComponent(accessToken)}`;
+      const deepLink = `subscriptin://auth/callback#access_token=${encodeURIComponent(accessToken)}`;
 
       // Attempt to open the app
       window.location.href = deepLink;
