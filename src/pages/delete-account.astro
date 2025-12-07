@@ -1,0 +1,433 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
+---
+
+<BaseLayout
+  title="Delete Your Account"
+  description="Learn how to request deletion of your Subscriptin account and associated data."
+>
+  <div class="min-h-screen" style="width: 100%;">
+    <!-- Header -->
+    <header class="surface elevation-1 sticky top-0 z-10" style="width: 100%;">
+      <div style="max-width: 80rem; margin: 0 auto; padding: 2rem 1.5rem;">
+        <a href="/" class="hover:opacity-80 transition-opacity" style="display: flex; justify-content: center;">
+          <Logo size="small" />
+        </a>
+      </div>
+    </header>
+
+    <!-- Delete Account Content -->
+    <main style="width: 100%;">
+      <div style="max-width: 80rem; margin: 0 auto; padding: 5rem 1.5rem 8rem 1.5rem;">
+        <!-- Surface container for better readability -->
+        <article class="surface elevation-1 rounded-3xl delete-content" style="padding: 4rem;">
+          <h1>Delete Your Subscriptin Account</h1>
+
+          <p class="intro-text">
+            We understand that you may want to delete your Subscriptin account. This page explains how to request account deletion and what happens to your data.
+          </p>
+
+          <h2>How to Request Account Deletion</h2>
+
+          <p>To request deletion of your Subscriptin account and associated data, please follow these steps:</p>
+
+          <ol>
+            <li>Send an email to <a href="mailto:support@subscriptin.com">support@subscriptin.com</a> from the email address associated with your account</li>
+            <li>Include "Account Deletion Request" in the subject line</li>
+            <li>In the email body, confirm that you want to permanently delete your account and all associated data</li>
+            <li>You will receive a confirmation email within 2 business days acknowledging your request</li>
+            <li>Your account and data will be deleted within 30 days of your request</li>
+          </ol>
+
+          <div class="important-notice">
+            <h3>⚠️ Important</h3>
+            <p>Account deletion is permanent and cannot be undone. Please make sure you want to proceed before submitting your request.</p>
+          </div>
+
+          <h2>What Data Gets Deleted</h2>
+
+          <p>When you request account deletion, the following data will be permanently removed from our systems:</p>
+
+          <ul>
+            <li><strong>Account Information:</strong> Your email address, username, and profile settings</li>
+            <li><strong>Subscription Data:</strong> All subscription entries you've created, including names, costs, renewal dates, and notes</li>
+            <li><strong>Usage Data:</strong> Your app usage patterns, preferences, and settings</li>
+            <li><strong>Analytics Data:</strong> Any insights, reports, or analytics generated from your subscription data</li>
+            <li><strong>Authentication Data:</strong> Login credentials and authentication tokens</li>
+          </ul>
+
+          <h2>Data Retention Period</h2>
+
+          <p>Most of your data is deleted within 30 days of your deletion request. However, some information may be retained for the following periods:</p>
+
+          <ul>
+            <li><strong>Transaction Records:</strong> Financial transaction records may be retained for up to 7 years to comply with legal and tax requirements</li>
+            <li><strong>Anonymized Analytics:</strong> Aggregated, anonymized usage statistics that cannot identify you personally may be retained indefinitely for product improvement</li>
+            <li><strong>Legal Compliance:</strong> Any data required to be retained by law will be kept for the minimum required period</li>
+            <li><strong>Backup Systems:</strong> Data in backup systems will be deleted within 90 days as backups are cycled</li>
+          </ul>
+
+          <h2>What Happens After Deletion</h2>
+
+          <p>Once your account is deleted:</p>
+
+          <ul>
+            <li>You will no longer be able to log in to Subscriptin</li>
+            <li>All your subscription tracking data will be permanently removed</li>
+            <li>You will not receive any further notifications or emails from us (except a final deletion confirmation)</li>
+            <li>Your email address can be used to create a new account in the future if desired</li>
+          </ul>
+
+          <h2>Alternative: Temporary Account Deactivation</h2>
+
+          <p>If you're not sure about permanently deleting your account, you can request temporary deactivation instead:</p>
+
+          <ul>
+            <li>Contact <a href="mailto:support@subscriptin.com">support@subscriptin.com</a> to request account deactivation</li>
+            <li>Your account will be deactivated but your data will be preserved for up to 90 days</li>
+            <li>You can reactivate your account during this period by contacting support</li>
+            <li>After 90 days of deactivation, your account may be permanently deleted</li>
+          </ul>
+
+          <h2>Questions or Concerns?</h2>
+
+          <p>If you have any questions about the account deletion process or data retention, please contact us at <a href="mailto:support@subscriptin.com">support@subscriptin.com</a>. We're here to help.</p>
+
+          <p>For more information about how we handle your data, please see our <a href="/privacy">Privacy Policy</a>.</p>
+
+        </article>
+
+        <!-- Footer -->
+        <footer class="border-t border-[var(--color-outline-variant)] dark:border-[var(--color-outline-variant-dark)] text-center" style="margin-top: 8rem; padding-top: 3rem;">
+          <p class="body-large text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)] leading-relaxed footer-text">
+            Need help? Email us at{' '}
+            <a
+              href="mailto:support@subscriptin.com"
+              class="text-[var(--color-primary)] dark:text-[var(--color-primary-dark)] hover:underline font-medium"
+            >
+              support@subscriptin.com
+            </a>
+          </p>
+          <p class="body-medium text-[var(--color-on-surface-variant)] dark:text-[var(--color-on-surface-variant-dark)]">
+            © 2024 Subscriptin. All rights reserved.
+          </p>
+        </footer>
+      </div>
+    </main>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  /* Page padding */
+  .page-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .page-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .page-padding {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  /* Desktop spacing (default) */
+  .header-padding {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .main-padding {
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+  }
+
+  .article-padding {
+    padding: 4rem;
+  }
+
+  .footer-spacing {
+    margin-top: 8rem;
+    padding-top: 3rem;
+  }
+
+  .footer-text {
+    margin-bottom: 2rem;
+  }
+
+  /* Mobile spacing (640px and below) */
+  @media (max-width: 640px) {
+    .header-padding {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .main-padding {
+      padding-top: 3rem;
+      padding-bottom: 4rem;
+    }
+
+    .article-padding {
+      padding: 2rem;
+    }
+
+    .footer-spacing {
+      margin-top: 4rem;
+      padding-top: 2rem;
+    }
+
+    .footer-text {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  /* Very small mobile (400px and below) */
+  @media (max-width: 400px) {
+    .header-padding {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .main-padding {
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+    }
+
+    .article-padding {
+      padding: 1.5rem;
+    }
+
+    .footer-spacing {
+      margin-top: 3rem;
+    }
+  }
+
+  /* Delete Account Content Styling - Material 3 */
+  .delete-content {
+    line-height: 1.6;
+  }
+
+  .delete-content h1 {
+    font-size: 2.25rem !important;
+    line-height: 2.75rem !important;
+    font-weight: 400 !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 0 !important;
+    text-align: center !important;
+    color: var(--color-primary) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .delete-content h1 {
+      color: var(--color-primary-dark) !important;
+    }
+  }
+
+  .delete-content .intro-text {
+    font-size: 1.125rem !important;
+    line-height: 1.875rem !important;
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+    color: var(--color-on-surface-variant) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .delete-content .intro-text {
+      color: var(--color-on-surface-variant-dark) !important;
+    }
+  }
+
+  .delete-content h2 {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+    font-weight: 400 !important;
+    margin-top: 4rem !important;
+    margin-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
+    border-bottom: 1px solid var(--color-outline-variant) !important;
+    color: var(--color-on-surface) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .delete-content h2 {
+      color: var(--color-on-surface-dark) !important;
+      border-bottom-color: var(--color-outline-variant-dark) !important;
+    }
+  }
+
+  .delete-content h2:first-of-type {
+    margin-top: 2rem !important;
+  }
+
+  .delete-content h3 {
+    font-size: 1.125rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 500 !important;
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    color: var(--color-primary) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .delete-content h3 {
+      color: var(--color-primary-dark) !important;
+    }
+  }
+
+  .delete-content p {
+    font-size: 1rem !important;
+    line-height: 1.875rem !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 0 !important;
+    color: var(--color-on-surface-variant) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .delete-content p {
+      color: var(--color-on-surface-variant-dark) !important;
+    }
+  }
+
+  .delete-content strong {
+    font-weight: 500;
+    color: var(--color-on-surface);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .delete-content strong {
+      color: var(--color-on-surface-dark);
+    }
+  }
+
+  .delete-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .delete-content a:hover {
+    opacity: 0.8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .delete-content a {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  /* Lists */
+  .delete-content ul,
+  .delete-content ol {
+    margin-bottom: 1.5rem !important;
+    margin-top: 0.5rem !important;
+    padding-left: 1.5rem !important;
+    color: var(--color-on-surface-variant) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .delete-content ul,
+    .delete-content ol {
+      color: var(--color-on-surface-variant-dark) !important;
+    }
+  }
+
+  .delete-content ul {
+    list-style-type: disc !important;
+  }
+
+  .delete-content ol {
+    list-style-type: decimal !important;
+  }
+
+  .delete-content li {
+    margin-bottom: 0.75rem !important;
+    line-height: 1.75rem !important;
+    font-size: 1rem !important;
+  }
+
+  .delete-content li:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Important Notice Box */
+  .delete-content .important-notice {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .delete-content .important-notice {
+      background-color: rgba(255, 193, 7, 0.15);
+    }
+  }
+
+  .delete-content .important-notice h3 {
+    margin-top: 0 !important;
+    margin-bottom: 0.75rem !important;
+    color: #f57c00 !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .delete-content .important-notice h3 {
+      color: #ffa726 !important;
+    }
+  }
+
+  .delete-content .important-notice p {
+    margin-bottom: 0 !important;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 640px) {
+    .delete-content h1 {
+      font-size: 1.875rem !important;
+      line-height: 2.25rem !important;
+    }
+
+    .delete-content .intro-text {
+      font-size: 1rem !important;
+      line-height: 1.625rem !important;
+    }
+
+    .delete-content h2 {
+      font-size: 1.25rem !important;
+      line-height: 1.75rem !important;
+    }
+
+    .delete-content h3 {
+      font-size: 1rem !important;
+      line-height: 1.5rem !important;
+    }
+
+    .delete-content p {
+      font-size: 0.9375rem !important;
+      line-height: 1.625rem !important;
+    }
+
+    .delete-content li {
+      font-size: 0.9375rem !important;
+      line-height: 1.625rem !important;
+    }
+
+    .delete-content ul,
+    .delete-content ol {
+      padding-left: 1.25rem !important;
+    }
+
+    .delete-content .important-notice {
+      padding: 1rem;
+    }
+  }
+</style>
